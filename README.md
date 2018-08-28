@@ -74,6 +74,27 @@ bot.disableChatReaction();
 Additionally, if you want to see debug information, you can set the
 `_DEBUG` variable on row 2 of `index.js` to `true`.
 
+## Test coverage
+To test it simply run `npm test`.
+```sh
+> npm test
+
+> vas-chat-reactor@1.0.3 test /home/ubuntu/workspace/git/vas-chat-reactor
+> mocha
+
+
+
+  vas-chat-reactor
+    Load plugin
+      ✓ should load events
+      ✓ should add functions to the bot
+      ✓ should not crash on message event
+
+
+  3 passing (23ms)
+
+```
+
 ## License
 This plugin is distributed under Apache 2.0. See [LICENSE](LICENSE).
 
