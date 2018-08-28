@@ -19,9 +19,13 @@ npm install vas-chat-reactor
 ```
 
 ## Configuration
-* Fill in the [`config.ini`](config.ini) file with the necessary
+* Move or copy the file [`chat_config.ini`](chat_config.ini)
+in the bot directory. Make sure to have it in the same directory where
+`nodejs` starts.
+* Fill in the [`chat_config.ini`](chat_config.ini) file with the necessary
 things to identify Chat Reaction messages and extract the word from it.
-You will find all the documentation inside it.
+You will find all the documentation inside it. The `dictionaryFile` and
+`unknownWordsFile` paths are relative to where `nodejs` starts.
 * Fill the time to wait until the bot writes the word
 (will be evaluated with `eval(timeout)`). I found that
 `1850 + ~~((0.5 + Math.random()/2) * 150 * word.length)` works best
@@ -56,7 +60,7 @@ const bot = mineflayer.createBot({
 ```
 Or, if you prefer:
 ```javascript
-// Bot is already created
+// Bot is already created here
 require("vas-chat-reactor")(bot);
 ```
 And then:

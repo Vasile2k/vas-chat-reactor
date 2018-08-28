@@ -3,7 +3,6 @@ var _DEBUG = false;
 
 const assert = _DEBUG ? require("assert") : noop;
 const fs     = require("fs");
-const path   = require("path");
 const config = require("config.ini");
 
 var isInited  = false;
@@ -45,7 +44,7 @@ module.exports = function(bot){
 
 function init(){
 	
-	var settings = config.load(path.join(__dirname, "config.ini"));
+	var settings = config.load("chat_config.ini");
 	
 	if(_DEBUG){
 		console.log(settings);
@@ -65,8 +64,8 @@ function init(){
 		lettersToEndIfDescramble   = settings.vasChatReactor.lettersToEndIfDescramble;
 		chanceOfGuessing  = settings.vasChatReactor.chanceOfGuessing;
 		timeoutExpression = settings.vasChatReactor.timeoutExpression;
-		dictionaryFile    = path.join(__dirname, settings.vasChatReactor.dictionaryFile);
-		unknownWordsFile  = path.join(__dirname, settings.vasChatReactor.unknownWordsFile);
+		dictionaryFile    = settings.vasChatReactor.dictionaryFile;
+		unknownWordsFile  = settings.vasChatReactor.unknownWordsFile;
 		
 		try{
 			var contents = fs.readFileSync(dictionaryFile, "utf8");
