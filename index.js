@@ -19,10 +19,10 @@ var wordBeginIndexIfWrite      = 0;
 var lettersToEndIfWrite        = 0;
 var wordBeginIndexIfDescramble = 0;
 var lettersToEndIfDescramble   = 0;
-var chanceOfGuessing = 0;
+var chanceOfGuessing  = 0;
 var timeoutExpression = "";
-var dictionaryFile   = "";
-var unknownWordsFile = "";
+var dictionaryFile    = "";
+var unknownWordsFile  = "";
 
 function noop(){}
 
