@@ -4,7 +4,8 @@
   "description": "A mineflayer plugin that reacts to word descramble chat messages.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "pretest": "eslint --ignore-path .gitignore ."
   },
   "repository": {
     "type": "git",
@@ -22,11 +23,13 @@
     "node": ">=4"
   },
   "author": "Vasile2k",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "dependencies": {
     "config.ini": "^0.0.52"
   },
   "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-strongloop": "^2.1.0",
     "mocha": "^2.4.5"
   },
   "bugs": {
