@@ -1,6 +1,6 @@
 {
   "name": "vas-chat-reactor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A mineflayer plugin that reacts to word descramble chat messages.",
   "main": "index.js",
   "scripts": {
@@ -18,6 +18,9 @@
     "plugin",
     "plugout"
   ],
+  "engines": {
+    "node": ">=4"
+  },
   "author": "Vasile2k",
   "license": "Apache 2.0",
   "dependencies": {
@@ -25,5 +28,8 @@
   },
   "devDependencies": {
     "mocha": "^2.4.5"
+  },
+  "bugs": {
+    "url": "https://github.com/Vasile2k/vas-chat-reactor/issues"
   }
 }
