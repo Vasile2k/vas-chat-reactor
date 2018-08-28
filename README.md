@@ -20,7 +20,7 @@ npm install vas-chat-reactor
 
 ## Configuration
 * Fill in the [`config.ini`](config.ini) file with the necessary
-* things to identify Chat Reaction messages and extract the word from it.
+things to identify Chat Reaction messages and extract the word from it.
 You will find all the documentation inside it.
 * Fill the time to wait until the bot writes the word
 (will be evaluated with `eval(timeout)`). I found that
@@ -34,7 +34,10 @@ some time until it will collect most of them.
 
 Anytime the bot will find an unknown word it will write it into the
 `unknownWordsFile`, as specificated in configuration file.\
-**Don't use my config and dictionary file, they are just a reference guide!**
+**Don't use my config and dictionary file, they are just a reference guide!**\
+Why don't I use regex instead of `string.startsWith`, `string.endsWith`
+and `substring`? Because it's faster this way and you can't have weird
+patterns in the message. Maybe I'm wrong...
 
 ## Usage
 Simply require it and add it to bot's plugins.
@@ -52,10 +55,20 @@ const bot = mineflayer.createBot({
 
 ```
 Or, if you prefer:
-```js
+```javascript
 // Bot is already created
 require("vas-chat-reactor")(bot);
 ```
+And then:
+```javascript
+bot.enableChatReaction();
+```
+And if you want to disable it on the fly:
+```javascript
+bot.disableChatReaction();
+```
+Additionally, if you want to see debug information, you can set the
+`_DEBUG` variable on row 2 of `index.js` to `true`.
 
 ## License
 This plugin is distributed under Apache 2.0. See [LICENSE](LICENSE).
