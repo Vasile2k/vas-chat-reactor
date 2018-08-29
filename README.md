@@ -72,7 +72,7 @@ And if you want to disable it on the fly:
 bot.disableChatReaction();
 ```
 Additionally, if you want to see debug information, you can set the
-`_DEBUG` variable on row 2 of `index.js` to `true`.
+`_DEBUG` variable on row 16 of `index.js` to `true`.
 
 ## Test coverage
 To test it simply run `npm test`.
